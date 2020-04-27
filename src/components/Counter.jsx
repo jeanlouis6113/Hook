@@ -3,9 +3,6 @@ import React, { useState } from 'react';
 function Counter () {
   const [count, setCount] = useState(0);
 
-  function handleInput (e) {
-    setCount(e.target.value);
-  }
 
   return (
     <div>
@@ -14,7 +11,7 @@ function Counter () {
         type='text'
         id='initvalue'
         name='initvalue'
-        onChange={handleInput}
+        onChange={(e) => setCount(+e.target.value)}
       />
 
       <p>Le compteur est  à : {count} </p>
